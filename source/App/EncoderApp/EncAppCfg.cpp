@@ -1154,6 +1154,7 @@ bool EncAppCfg::parseCfg( int argc, char* argv[] )
 
   /* Quantization parameters */
   ("QP,q",                                            m_iQP,                                               30, "Qp value")
+  //("rQP,rq",                                          m_riQP,                                              63, "rest Qp value")
   ("QPIncrementFrame,-qpif",                          m_qpIncrementAtSourceFrame,   std::optional<uint32_t>(), "If a source file frame number is specified, the internal QP will be incremented for all POCs associated with source frames >= frame number. If empty, do not increment.")
   ("IntraQPOffset",                                   m_intraQPOffset,                                      0, "Qp offset value for intra slice, typically determined based on GOP size")
   ("LambdaFromQpEnable",                              m_lambdaFromQPEnable,                             false, "Enable flag for derivation of lambda from QP")

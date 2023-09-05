@@ -153,6 +153,9 @@ using FrameDeltaQps = std::vector<int>;
 /// encoder configuration class
 class EncCfg
 {
+//public:
+//  int m_riQP;
+
 protected:
   //==== File I/O ========
   Fraction  m_frameRate;

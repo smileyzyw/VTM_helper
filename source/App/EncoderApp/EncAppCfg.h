@@ -268,6 +268,7 @@ protected:
   std::optional<uint32_t> m_qpIncrementAtSourceFrame;   // Optional source frame number at which all subsequent frames
                                                         // are to use an increased internal QP.
   int       m_iQP;                                            ///< QP value of key-picture (integer)
+  //int       m_riQP;
   bool      m_useIdentityTableForNon420Chroma;
   ChromaQpMappingTableParams m_chromaQpMappingTableParams;
   int       m_intraQPOffset;                                  ///< QP offset for intra slice (integer)
