@@ -1671,6 +1671,9 @@ void EncSlice::encodeCtus( Picture* pcPic, const bool bCompressEntireSlice, cons
     pRdCost->saveUnadjustedLambda();
   }
 #endif
+  // zyw code
+  if (pcPic->poc != 0)
+    pcSlice->setSliceQp(63);
 
   EnumArray<int, ChannelType> prevQP;
   EnumArray<int, ChannelType> currQP;
@@ -1713,10 +1716,6 @@ void EncSlice::encodeCtus( Picture* pcPic, const bool bCompressEntireSlice, cons
       }
     }
   }
-
-  // zyw code
-  if (pcPic->poc != 0)
-    pcSlice->setSliceQp(63);
 
   // for every CTU in the slice
   for( uint32_t ctuIdx = 0; ctuIdx < pcSlice->getNumCtuInSlice(); ctuIdx++ )
