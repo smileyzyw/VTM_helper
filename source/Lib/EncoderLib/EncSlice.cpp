@@ -938,7 +938,11 @@ double EncSlice::calculateLambda(const Slice *slice,
                                  const double dQP,     // initial double-precision QP
                                  int &        qp)              // returned integer QP.
 {
-  double dLambda = initializeLambda(slice, gopId, int(refQP + 0.5), dQP);
+  // zyw code
+  double dLambda = 1.7e+50;
+  if (slice->getPic()->poc == 0)
+    dLambda = initializeLambda(slice, gopId, int(refQP + 0.5), dQP);
+
   qp             = Clip3(-slice->getSPS()->getQpBDOffset(ChannelType::LUMA), MAX_QP, int(dQP + 0.5));
 
   if (slice->getDepQuantEnabledFlag())

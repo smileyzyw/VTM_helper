@@ -69,14 +69,10 @@ double RdCost::calcRdCost( uint64_t fracBits, Distortion distortion )
     return MAX_DOUBLE;
   }
 #if WCG_EXT
-  // zyw code
-  //return (useUnadjustedLambda ? m_distScaleUnadjusted : m_distScale) * double(distortion) + double(fracBits);
-  return double(fracBits);
+  return (useUnadjustedLambda ? m_distScaleUnadjusted : m_distScale) * double(distortion) + double(fracBits);
 
 #else
-  // zyw code
-  //return m_distScale * double(distortion) + double(fracBits);
-  return double(fracBits);
+  return m_distScale * double(distortion) + double(fracBits);
 
 #endif
 }
